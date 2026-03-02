@@ -1,0 +1,28 @@
+# Global replica count
+replicaCount: 1
+
+backend:
+  image:
+    repository: mourphy/hamza-backend
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "1.0.1"
+  service:
+    type: ClusterIP
+    port: 3000
+    targetPort: 3000
+  env:
+    PORT: "3000"
+    SERVE_FRONTEND: "false"
+
+frontend:
+  image:
+    repository: mourphy/hamza-frontend
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "1.0.1"
+  service:
+    type: NodePort
+    port: 8080
+    targetPort: 80
+    nodePort: 30080

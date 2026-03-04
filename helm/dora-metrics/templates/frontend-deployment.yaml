@@ -25,6 +25,7 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+          {{- if .Values.env }}
           env:
-            - name: SPRING_PROFILES_ACTIVE
-              value: {{ .Values.env.springProfile | quote }} 
+            {{- toYaml .Values.env | nindent 12 }}
+          {{- end }}

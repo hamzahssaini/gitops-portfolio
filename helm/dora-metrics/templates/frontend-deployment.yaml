@@ -25,7 +25,7 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          {{- if .Values.env }}
+          {{- if .Values.frontend.env }}
           env:
-            {{- toYaml .Values.env | nindent 12 }}
+            {{- toYaml .Values.frontend.env | nindent 12 }}
           {{- end }}

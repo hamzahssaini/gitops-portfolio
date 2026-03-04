@@ -20,7 +20,7 @@ frontend:
     repository: mourphy/hamza-frontend
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "v1.0.2"
+    tag: "v1.0.3"
   service:
     type: NodePort
     port: 8080

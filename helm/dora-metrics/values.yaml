@@ -21,6 +21,9 @@ frontend:
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
     tag: "v1.0.3"
+    env:
+      - name: BACKEND_URL
+        value: "http://portfolio-hamza-portfolio-backend:3000"
   service:
     type: NodePort
     port: 8080

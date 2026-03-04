@@ -25,3 +25,6 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: {{ .Values.env.springProfile | quote }} 
